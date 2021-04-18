@@ -1,0 +1,26 @@
+#container_disclaimer{
+    display: flex;
+    flex-direction: column;
+    row-gap: 50px;
+    align-items: center;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: auto;
+    min-width: 60%;
+    width: fit-content;
+    max-width: 80%;
+    max-height: 90%;
+    height: max-content;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+}
+
+#heading{
+
+}
+
+#text{
+
+}
