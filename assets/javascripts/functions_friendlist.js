@@ -41,7 +41,7 @@ function createFriendlist(data) {
         const image = document.createElement(`img`);
         if (data[userName] != null) {
             image.src = data[userName]
-        } else image.src = "assets/images/profile-icon.png"
+        } else image.src = "assets/assets.images/profile-icon.png"
 
         //Element erstellen, um HoverText anzuzeigen
         const hoverText = document.createElement(`div`);

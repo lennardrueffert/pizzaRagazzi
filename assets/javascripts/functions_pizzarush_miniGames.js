@@ -937,7 +937,7 @@ function startMiniGame(ingredientList) {
             let y;
 
             canvas.onmousedown = checkForHit;
-            //canvas.onmousedown.apply(document.body.style.cursor= `url("/assets/images/cursors/rollingPin.cur"),auto`);
+            //canvas.onmousedown.apply(document.body.style.cursor= `url("/assets/assets.images/cursors/rollingPin.cur"),auto`);
             canvas.onmouseup = switchCursorToNormal;
 
             function switchCursorToNormal(event) {

@@ -3,14 +3,23 @@
     <head>
         <meta charset="UTF-8">
         <link rel="shortcut icon" type="image_path/png" href="/assets/images/favicon.png">
-        <link rel="stylesheet" type="text/css" href="/assets/stylesheets/style_tutorial.css">
+        <link rel="stylesheet" type="text/css" href="assets/stylesheets/style_tutorial.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <title>Tutorial</title>
     </head>
     <body onload="start()">
-            <!--NAVIGATION BAR ------------->
-        <div id="nav-placeholder">@navbar.render(assetsFinder)</div>
-            <!------------------------------>
+    <!--Navigation bar-->
+    <div id="nav-placeholder">
+
+    </div>
+
+    <script>
+        $(function(){
+            $("#nav-placeholder").load("navbar.html");
+        });
+    </script>
+    <!--end of Navigation bar-->
         <div id="tutorialWindow">
             <img id="video" src="" alt="tutorialGif"/>
             <div id="container_information">
@@ -29,10 +38,10 @@
                 const descriptions = [];
 
                 function start() {
-                    videos.push("/assets/images/tutorial/getting_ingredients.gif")
+                    videos.push("assets/images/tutorial/getting_ingredients.gif")
                     descriptions.push("Erhalte eine Zutat indem du auf sie klickst und sie herumziehst");
 
-                    videos.push("/assets/images/tutorial/correct_processing.gif")
+                    videos.push("assets/images/tutorial/correct_processing.gif")
                     descriptions.push("Ziehe Zutaten zur passenden Verarbeitungsmethode \nTipp. Du kannst so viele Zutaten gleichzeitig bearbeiten wie du willst!");
 
                     videos.push("assets/images/tutorial/stomping_ingredients.gif")
