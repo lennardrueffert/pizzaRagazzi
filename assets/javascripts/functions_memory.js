@@ -278,6 +278,159 @@ function restartGame() {
 }
 
 // DATABASE STUFF -----------------------------------------------------------------------------------------------------
+memoryIngredients = [
+    {
+        "id": 1,
+        "name": "Impasto",
+        "description": "Besteht aus Mehl, Wasser, Hefe und Salz.",
+        "picture": "assets/images/databaseBackup/ingredients/impasto/picture_raw_1.png"
+    },
+    {
+        "id": 1,
+        "name": "Impasto",
+        "description": "Besonders gut eignet sich Mehl vom Typ 00.",
+        "picture": "assets/images/databaseBackup/ingredients/impasto/picture_raw_1.png"
+    },
+    {
+        "id": 1,
+        "name": "Impasto",
+        "description": "Benötigt viel Zeit zum Aufgehen.",
+        "picture": "assets/images/databaseBackup/ingredients/impasto/picture_raw_1.png"
+    },
+    {
+        "id": 2,
+        "name": "Pomodoro",
+        "description": "Traditionell auch in Scheiben auf die Pizza gegeben.",
+        "picture": "assets/images/databaseBackup/ingredients/pomodoro/picture_raw_2.png"
+    },
+    {
+        "id": 2,
+        "name": "Pomodoro",
+        "description": "Rot und darf auf keiner Pizza fehlen.",
+        "picture": "assets/images/databaseBackup/ingredients/pomodoro/picture_raw_2.png"
+    },
+    {
+        "id": 2,
+        "name": "Pomodoro",
+        "description": "Gewürzt mit Oregano, Basilikum und Knoblauch.",
+        "picture": "assets/images/databaseBackup/ingredients/pomodoro/picture_raw_2.png"
+    },
+    {
+        "id": 3,
+        "name": "Formaggio",
+        "description": "Beliebte Sorten: Mozzarella, Parmesan, Pecorino.",
+        "picture": "assets/images/databaseBackup/ingredients/formaggio/picture_raw_3.png"
+    },
+    {
+        "id": 3,
+        "name": "Formaggio",
+        "description": "Kommt traditionell nach den Tomaten auf die Pizza.",
+        "picture": "assets/images/databaseBackup/ingredients/formaggio/picture_raw_3.png"
+    },
+    {
+        "id": 3,
+        "name": "Formaggio",
+        "description": "Schmilzt im Ofen.",
+        "picture": "assets/images/databaseBackup/ingredients/formaggio/picture_raw_3.png"
+    },
+    {
+        "id": 4,
+        "name": "Salame",
+        "description": "Wird für die beliebteste Pizza Deutschlands benötigt.",
+        "picture": "assets/images/databaseBackup/ingredients/salame/picture_raw_4.png"
+    },
+    {
+        "id": 4,
+        "name": "Salame",
+        "description": "Gewürzte und geräucherte Wurst.",
+        "picture": "assets/images/databaseBackup/ingredients/salame/picture_raw_4.png"
+    },
+    {
+        "id": 4,
+        "name": "Salame",
+        "description": "Aus Rind- oder Schweinefleisch hergestellt.",
+        "picture": "assets/images/databaseBackup/ingredients/salame/picture_raw_4.png"
+    },
+    {
+        "id": 5,
+        "name": "Funghi",
+        "description": "Schwarze Flecken darauf sind Schimmel.",
+        "picture": "assets/images/databaseBackup/ingredients/funghi/picture_raw_5.png"
+    },
+    {
+        "id": 5,
+        "name": "Funghi",
+        "description": "Ein weißer Flaum ist unbedenklich.",
+        "picture": "assets/images/databaseBackup/ingredients/funghi/picture_raw_5.png"
+    },
+    {
+        "id": 5,
+        "name": "Funghi",
+        "description": "Beliebt sind vor allem Champignons.",
+        "picture": "assets/images/databaseBackup/ingredients/funghi/picture_raw_5.png"
+    },
+    {
+        "id": 5,
+        "name": "Funghi",
+        "description": "Vor Verwendung ggf. von Erde säubern.",
+        "picture": "assets/images/databaseBackup/ingredients/funghi/picture_raw_5.png"
+    },
+    {
+        "id": 6,
+        "name": "Prosciutto",
+        "description": "Aus Schweinefleisch hergestellt.",
+        "picture": "assets/images/databaseBackup/ingredients/prosciutto/picture_raw_6.png"
+    },
+    {
+        "id": 6,
+        "name": "Prosciutto",
+        "description": "Luftgetrocknet und in Italien hergestellt.",
+        "picture": "assets/images/databaseBackup/ingredients/prosciutto/picture_raw_6.png"
+    },
+    {
+        "id": 6,
+        "name": "Prosciutto",
+        "description": "Sorten: Serrano, Parma, Schwarzwälder",
+        "picture": "assets/images/databaseBackup/ingredients/prosciutto/picture_raw_6.png"
+    },
+    {
+        "id": 7,
+        "name": "Ananas",
+        "description": "Äußerst kontroverse Zutat.",
+        "picture": "assets/images/databaseBackup/ingredients/ananas/picture_raw_7.png"
+    },
+    {
+        "id": 7,
+        "name": "Ananas",
+        "description": "Zutat für eine Pizza mit kanadischem Ursprung.",
+        "picture": "assets/images/databaseBackup/ingredients/ananas/picture_raw_7.png"
+    },
+    {
+        "id": 7,
+        "name": "Ananas",
+        "description": "Zutat wird nur für eine bestimmte Pizza verwendet.",
+        "picture": "assets/images/databaseBackup/ingredients/ananas/picture_raw_7.png"
+    },
+    {
+        "id": 8,
+        "name": "Paprica",
+        "description": "Gibt es in grün, gelb und rot.",
+        "picture": "assets/images/databaseBackup/ingredients/paprica/picture_raw_8.png"
+    },
+    {
+        "id": 8,
+        "name": "Paprica",
+        "description": "Oft längliche oder rundliche Schoten.",
+        "picture": "assets/images/databaseBackup/ingredients/paprica/picture_raw_8.png"
+    },
+    {
+        "id": 8,
+        "name": "Paprica",
+        "description": "Nur kurz backen, um Knackigkeit zu erhalten.",
+        "picture": "assets/images/databaseBackup/ingredients/paprica/picture_raw_8.png"
+    }
+]
+
 
 async function createMemoryCards() {
 
@@ -321,9 +474,11 @@ function removeDuplicates(ingredients) {
 }
 
 async function getMemoryIngredients() {
-
+    return memoryIngredients;
+    /*
     let response = await fetch("memory/getMemoryIngredients");
     return response.json();
+     */
 }
 
 async function setCurrentPlayerTier(tier) {
