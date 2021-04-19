@@ -633,6 +633,7 @@ async function setCurrentPlayerPoints(newTotalPoints, newHighscore) {
 
 function resetPoints() {
     gameProperties.pointCounter = 0;
+    updateCurrentPoints();
     /*Original
     fetch("/pizza_rush/reset_points", {
         method: 'POST',
