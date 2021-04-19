@@ -540,7 +540,42 @@ function validatePizza(order, pizza) {
 
     console.assert(pizza instanceof DraggablePizzaInstance);
     console.assert(order instanceof Order);
+    //Port------------
+    const orderPoints = order.points;
+    const orderIngredients = pizza.getIngredientIds();
+    const pizzaIngredients = order.requestedPizza.getIngredientIds();
+    const createdPizzaBakeStatus = pizza.bakeStatus;
 
+    const equalsIgnoreOrder = (a, b) => {
+        if (a.length !== b.length) return false;
+        const uniqueValues = new Set([...a, ...b]);
+        for (const v of uniqueValues) {
+            const aCount = a.filter(e => e === v).length;
+            const bCount = b.filter(e => e === v).length;
+            if (aCount !== bCount) return false;
+        }
+        return true;
+    }
+
+    let points = orderPoints;
+
+    if (equalsIgnoreOrder(orderIngredients,pizzaIngredients)){
+        switch (createdPizzaBakeStatus) {
+            case 3: // UNBAKED
+            case 5: // BURNT
+                points =points * 0.25;
+                break;
+            case 4: // WELL
+                //no negative Points since its baked
+                break;
+        }
+    }else{
+        points= 0;
+    }
+
+    gameProperties.pointCounter+=points;
+    updateCurrentPoints();
+/*
     fetch("/pizza_rush/validate_pizza", {
         method: 'POST',
         body: JSON.stringify({
@@ -557,6 +592,7 @@ function validatePizza(order, pizza) {
         .catch((error) => {
             console.error('Error:', error);
         });
+ */
 }
 
 async function updateCurrentPoints() {
