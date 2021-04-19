@@ -1,7 +1,7 @@
 class AudioPlayer {
     static short_ring() {
         const sound = document.createElement("AUDIO");
-        sound.setAttribute('src', "/assets/assets.sounds/short_ring.wav");
+        sound.setAttribute('src', "assets/sounds/short_ring.wav");
         sound.setAttribute('type', "audio/wav");
         sound.volume = 0.4;
         sound.play();
