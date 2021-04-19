@@ -9,15 +9,14 @@
     <title>Memory</title>
 </head>
 
-<body onload="createMemoryCards()">
-
+<body onload="createMemoryCards();loadNavbar()">
 <!--Navigation bar-->
 <div id="nav-placeholder"></div>
 
 <script>
-    $(function () {
+    function loadNavbar () {
         $("#nav-placeholder").load("navbar.html");
-    });
+    };
 </script>
 <!--end of Navigation bar-->
 

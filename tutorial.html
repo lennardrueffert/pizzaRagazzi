@@ -8,16 +8,14 @@
 
     <title>Tutorial</title>
 </head>
-<body onload="start()">
+<body onload="start();loadNavbar();">
 <!--Navigation bar-->
-<div id="nav-placeholder">
-
-</div>
+<div id="nav-placeholder"></div>
 
 <script>
-    $(function () {
+    function loadNavbar () {
         $("#nav-placeholder").load("navbar.html");
-    });
+    };
 </script>
 <!--end of Navigation bar-->
 

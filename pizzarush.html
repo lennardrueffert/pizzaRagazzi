@@ -14,16 +14,17 @@
     <title>Pizza Rush</title>
 </head>
 
-<body onload="loadGameElements()">
+<body onload="loadGameElements();loadNavbar()">
 <!--Navigation bar-->
 <div id="nav-placeholder"></div>
 
 <script>
-    $(function () {
+    function loadNavbar () {
         $("#nav-placeholder").load("navbar.html");
-    });
+    };
 </script>
 <!--end of Navigation bar-->
+
 <audio id="background_music">
     <source src="assets/sounds/tarantella_napoletana.mp3">
     Your browser does not support the audio element.

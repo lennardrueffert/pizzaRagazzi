@@ -9,14 +9,15 @@
 
     <title>Menu</title>
 </head>
-<body onload="setup()">
+<body onload="setup();loadNavbar()">
+
 <!--Navigation bar-->
 <div id="nav-placeholder"></div>
 
 <script>
-    $(function () {
+    function loadNavbar () {
         $("#nav-placeholder").load("navbar.html");
-    });
+    };
 </script>
 <!--end of Navigation bar-->
 
