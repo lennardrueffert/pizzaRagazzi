@@ -364,7 +364,7 @@ class Oven {
         this.gameElement.image = document.createElement('img');
 
         this.gameElement.setAttribute('class', "oven unclickable");
-        this.gameElement.image.setAttribute('src', "/assets/assets.images/oven.png");
+        this.gameElement.image.setAttribute('src', "assets/images/oven.png");
         this.gameElement.image.setAttribute('alt', "Oven");
 
         this.gameElement.appendChild(this.gameElement.image);
@@ -672,7 +672,7 @@ class AudioPlayer {
 
     static mash() {
         const sound = document.createElement("AUDIO");
-        sound.setAttribute('src', "/assets/assets.sounds/mash_kürzer.wav");
+        sound.setAttribute('src', "assets/sounds/mash_kürzer.wav");
         sound.setAttribute('type', "audio/wav");
         sound.volume = 0.4;
         sound.play();
@@ -680,7 +680,7 @@ class AudioPlayer {
 
     static fire() {
         const sound = document.createElement("AUDIO");
-        sound.setAttribute('src', "/assets/assets.sounds/epic_fire.wav");
+        sound.setAttribute('src', "assets/sounds/epic_fire.wav");
         sound.setAttribute('type', "audio/wav");
         sound.volume = 0.4;
         sound.play();
@@ -688,7 +688,7 @@ class AudioPlayer {
 
     static order_correct() {
         const sound = document.createElement("AUDIO");
-        sound.setAttribute('src', "/assets/assets.sounds/order_correct.wav");
+        sound.setAttribute('src', "assets/sounds/order_correct.wav");
         sound.setAttribute('type', "audio/wav");
         sound.volume = 0.4;
         sound.play();
@@ -696,7 +696,7 @@ class AudioPlayer {
 
     static order_expired() {
         const sound = document.createElement("AUDIO");
-        sound.setAttribute('src', "/assets/assets.sounds/order_expired.wav");
+        sound.setAttribute('src', "assets/sounds/order_expired.wav");
         sound.setAttribute('type', "audio/wav");
         sound.volume = 0.4;
         sound.play();
@@ -704,7 +704,7 @@ class AudioPlayer {
 
     static order_new() {
         const sound = document.createElement("AUDIO");
-        sound.setAttribute('src', "/assets/assets.sounds/order_new.wav");
+        sound.setAttribute('src', "assets/sounds/order_new.wav");
         sound.setAttribute('type', "audio/wav");
         sound.volume = 0.4;
         sound.play();
@@ -712,7 +712,7 @@ class AudioPlayer {
 
     static ingredient_hit() {
         const sound = document.createElement("AUDIO");
-        sound.setAttribute('src', "/assets/assets.sounds/ingredient_hit.wav");
+        sound.setAttribute('src', "assets/sounds/ingredient_hit.wav");
         sound.setAttribute('type', "audio/wav");
         sound.volume = 0.4;
         sound.play();
@@ -720,7 +720,7 @@ class AudioPlayer {
 
     static ingredient_finalHit() {
         const sound = document.createElement("AUDIO");
-        sound.setAttribute('src', "/assets/assets.sounds/ingredient_finalHit.wav");
+        sound.setAttribute('src', "assets/sounds/ingredient_finalHit.wav");
         sound.setAttribute('type', "audio/wav");
         sound.volume = 0.4;
         sound.play();
@@ -728,7 +728,7 @@ class AudioPlayer {
 
     static distraction_hit() {
         const sound = document.createElement("AUDIO");
-        sound.setAttribute('src', "/assets/assets.sounds/distraction_hit.wav");
+        sound.setAttribute('src', "assets/sounds/distraction_hit.wav");
         sound.setAttribute('type', "audio/wav");
         sound.volume = 0.4;
         sound.play();
@@ -736,7 +736,7 @@ class AudioPlayer {
 
     static throw() {
         const sound = document.createElement("AUDIO");
-        sound.setAttribute('src', "/assets/assets.sounds/ingredient_throw.wav");
+        sound.setAttribute('src', "assets/sounds/ingredient_throw.wav");
         sound.setAttribute('type', "audio/wav");
         sound.volume = 0.4;
         sound.play();
@@ -744,7 +744,7 @@ class AudioPlayer {
 
     static ingredient_stamp() {
         const sound = document.createElement("AUDIO");
-        sound.setAttribute('src', "/assets/assets.sounds/stamp_small.wav");
+        sound.setAttribute('src', "assets/sounds/stamp_small.wav");
         sound.setAttribute('type', "audio/wav");
         sound.volume = 0.4;
         sound.play();
@@ -752,7 +752,7 @@ class AudioPlayer {
 
     static ingredient_finalStamp() {
         const sound = document.createElement("AUDIO");
-        sound.setAttribute('src', "/assets/assets.sounds/stamp_big.wav");
+        sound.setAttribute('src', "assets/sounds/stamp_big.wav");
         sound.setAttribute('type', "audio/wav");
         sound.volume = 0.4;
         sound.play();
@@ -760,7 +760,7 @@ class AudioPlayer {
 
     static trashcan() {
         const sound = document.createElement("AUDIO");
-        sound.setAttribute('src', "/assets/assets.sounds/trashcan.wav");
+        sound.setAttribute('src', "assets/sounds/trashcan.wav");
         sound.setAttribute('type', "audio/wav");
         sound.volume = 0.4;
         sound.play();
@@ -768,7 +768,7 @@ class AudioPlayer {
 
     static round_lastFive() {
         const sound = document.createElement("AUDIO");
-        sound.setAttribute('src', "/assets/assets.sounds/round_lastFive.wav");
+        sound.setAttribute('src', "assets/sounds/round_lastFive.wav");
         sound.setAttribute('type', "audio/wav");
         sound.volume = 0.4;
         sound.play();
@@ -776,7 +776,7 @@ class AudioPlayer {
 
     static round_end() {
         const sound = document.createElement("AUDIO");
-        sound.setAttribute('src', "/assets/assets.sounds/round_end.wav");
+        sound.setAttribute('src', "assets/sounds/round_end.wav");
         sound.setAttribute('type', "audio/wav");
         sound.volume = 0.4;
         sound.play();

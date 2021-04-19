@@ -73,19 +73,35 @@ async function setupAvailablePizzas() {
 }
 
 async function getAvailableIngredients() {
+
+    const ingredients = [
+        [1,"Impasto","assets/images/databaseBackup/ingredients/impasto/picture_raw_1.png","assets/images/databaseBackup/ingredients/impasto/picture_raw_distraction_1.png","assets/images/databaseBackup/ingredients/impasto/picture_processed_1.png","assets/images/databaseBackup/ingredients/impasto/picture_baked_1.png","assets/images/databaseBackup/ingredients/impasto/picture_burnt_1.png",11]
+    ]
+    return ingredients;
+    /*
     let response = await fetch("pizza_rush/getAvailableIngredients");
     return response.json();
+
+     */
 }
 
 async function getAvailablePizzas() {
+    const pizzas = [
+        ["Margherita", 100, 80, "temp"], //TODO fix
+        ["Salame", 150, 90, "whatever"]
+    ]
+    return pizzas;
+    /*
     let response = await fetch("pizza_rush/getAvailablePizzas");
     return response.json();
+
+     */
 }
 
 // --------------------------------------------------------------------
 
 async function loadGameElements() {
-    const music = new Audio('/assets/assets.sounds/tarantella_napoletana.mp3');
+    const music = new Audio('assets/sounds/tarantella_napoletana.mp3');
     music.loop = true;
     music.volume = 0.01;
     await music.play();
