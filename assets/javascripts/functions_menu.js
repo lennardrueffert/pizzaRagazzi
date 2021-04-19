@@ -9,7 +9,13 @@ function setupUserData() {
     const username = document.getElementById("username");
     const total_points = document.getElementById("total_points");
     const tier_name = document.getElementById("tier_name");
+    //port Edit----------------
 
+    username.innerHTML = "Max"
+    tier_name.innerHTML = "Tester";
+    total_points.innerHTML = "Gesamtpunkte: " + "200";
+    //Original-----------------
+    /*
     $.get("/getUsername", function (data, status) {
         username.innerHTML = data;
     }).fail(function (data, status) {
@@ -30,6 +36,7 @@ function setupUserData() {
         total_points.innerHTML = "Error"
         alert("Couldn't retrieve Total points from database");
     });
+    */
 }
 
 function setupMenuItems() {
