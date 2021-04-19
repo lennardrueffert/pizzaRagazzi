@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <link href="assets/images/favicon.png" rel="shortcut icon" type="image_path/png">
+
+    <link href="assets/stylesheets/style_profile-page.css" rel="stylesheet" type="text/css">
+    <link href="assets/stylesheets/style_friendlist.css" rel="stylesheet" type="text/css">
+    <link href="assets/stylesheets/style_chat.css" rel="stylesheet" type="text/css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="assets/javascripts/functions_profile-page.js" type="text/javascript"></script>
+    <script src="assets/javascripts/functions_friendlist.js" type="text/javascript"></script>
+    <script src="assets/javascripts/functions_chat.js" type="text/javascript"></script>
+
+    <title>Profil</title>
+</head>
+
+<body id="body" onload="setup();
+    refreshChat();">
+<!--Navigation bar-->
+<div id="nav-placeholder"></div>
+
+<script>
+    $(function () {
+        $("#nav-placeholder").load("navbar.html");
+    });
+</script>
+<!--end of Navigation bar-->
+
+<div class="wrap">
+    <div class="left_div">
+        <img alt="profile-picture" id="profile-picture" src="assets/images/profile-icon.png">
+        <form name="userForm">
+            <h1 id="username">Username</h1>
+        </form>
+        <div id="fileChooser"></div>
+        <br>
+        <div id="mail"></div>
+        <br>
+        <div id="tier"></div>
+        <div id="gesamtpunkte"></div>
+        <div id="highscore"></div>
+        <br>
+        <button id="editProfileButton">Profil bearbeiten</button>
+    </div>
+
+    <div class="middle_div">
+        <h1 id="friends_heading">Freunde</h1>
+        <div id="container_friends">
+            <div class="loading" id="loading_friends">
+            </div>
+            <div id="friends-placeholder">
+            </div>
+        </div>
+        <br>
+        <label for="addFriendInput" id="addFriendInputLabel">Freund hinzufügen:</label>
+        <input id="addFriendInput" placeholder="Nutzernamen eingeben..." type="text">
+        <br>
+        <button id="addFriendButton" onclick="addFriend()">+</button>
+    </div>
+
+    <div class="right_div">
+        <h1 id="chat_heading">Chat</h1>
+        <label for="chatWithWhoInput" id="chatWithWhoInputLabel">Wem möchtest du schreiben?</label>
+        <br>
+        <input id="chatWithWhoInput" placeholder="Nutzernamen eingeben..." type="text">
+        <button id="chatWithWhoButton">Bestätigen</button>
+        <br>
+        <br>
+        <div class="loading" id="loading_messages"></div>
+        <div id="chatMessages_div">
+        </div>
+        <br>
+        <label for="sendMessageInput"></label>
+        <input id="sendMessageInput" placeholder="Nachricht schreiben..." type="text">
+        <button id="sendMessageButton">Senden</button>
+    </div>
+</div>
+
+<button id="backToMyProfileButton" onclick="backToMyProfile()">Zurück</button>
+
+</body>
+</html>

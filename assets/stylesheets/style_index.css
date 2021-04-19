@@ -1,0 +1,54 @@
+#container_disclaimer{
+    display: flex;
+    flex-direction: column;
+
+    min-height: 130px;
+
+    text-align: center;
+    font-size: 30px;
+    row-gap: 50px;
+    align-items: center;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    margin: auto;
+    min-width: 60%;
+    width: fit-content;
+    max-width: 80%;
+    max-height: 90%;
+    height: max-content;
+    padding: 10px;
+    transform: translate(-50%, -50%);
+}
+
+#buttonContainer {
+    display: inline-flex;
+}
+
+#heading{
+
+}
+
+#text{
+
+}
+
+.button{
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-size: 23px;
+    background-color: white;
+    border: 4px black solid;
+    color: black;
+    padding: 20px;
+    width: auto;
+    overflow: hidden;
+    margin: 20px;
+}
+
+.button:hover {
+    background: black;
+    color: white;
+}

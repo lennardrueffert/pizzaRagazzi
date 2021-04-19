@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="assets/stylesheets/style_menu.css" rel="stylesheet" type="text/css">
+    <link href="assets/images/favicon.png" rel="shortcut icon" type="image_path/png">
+    <script src="assets/javascripts/functions_menu.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <title>Menu</title>
+</head>
+<body onload="setup()">
+<!--Navigation bar-->
+<div id="nav-placeholder"></div>
+
+<script>
+    $(function () {
+        $("#nav-placeholder").load("navbar.html");
+    });
+</script>
+<!--end of Navigation bar-->
+
+<div id="user_data" onclick="location.href = 'profile.html'">
+    <div id="username"></div>
+    <div id="tier_name"></div>
+    <div id="total_points"></div>
+</div>
+
+<div class="container">
+    <div id="memory">
+        <button onclick="location.href = 'memory.html'" type="button">
+            Memory
+        </button>
+        <div id="memory_description">
+            Spiele Memory um Punkte zu verdienen und im Rang aufzusteigen
+        </div>
+    </div>
+
+    <div id="pizzaRush">
+        <button onclick="location.href = 'pizzarush.html'" type="button">
+            Pizza Rush
+        </button>
+        <div id="pizzaRush_description">Beweise dich als Pizza-Bäcker und sammle Punkte!</div>
+    </div>
+
+    <div id="tutorial">
+        <button onclick="location.href = 'tutorial.html'" type="button">
+            Tutorial
+        </button>
+        <div id="tutorial_description">
+            Mache dich mit den Spielmechaniken vertraut
+        </div>
+    </div>
+
+</div>
+
+</body>
+</html>
