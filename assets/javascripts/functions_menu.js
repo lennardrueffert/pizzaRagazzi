@@ -13,7 +13,7 @@ function setupUserData() {
 
     username.innerHTML = "Max"
     tier_name.innerHTML = "Tester";
-    total_points.innerHTML = "Gesamtpunkte: " + "200";
+    total_points.innerHTML = "Gesamtpunkte: " + "4200";
     //Original-----------------
     /*
     $.get("/getUsername", function (data, status) {
