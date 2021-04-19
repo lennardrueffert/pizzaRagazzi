@@ -1,5 +1,6 @@
 const gameProperties = {
     roundLength: 240,
+    pointCounter: 0,//Port added
 
     maxTimeBetweenOrders: 30,
     orderDelay: 2,
@@ -73,11 +74,101 @@ async function setupAvailablePizzas() {
 }
 
 async function getAvailableIngredients() {
-
-    const ingredients = [
-        [1,"Impasto","assets/images/databaseBackup/ingredients/impasto/picture_raw_1.png","assets/images/databaseBackup/ingredients/impasto/picture_raw_distraction_1.png","assets/images/databaseBackup/ingredients/impasto/picture_processed_1.png","assets/images/databaseBackup/ingredients/impasto/picture_baked_1.png","assets/images/databaseBackup/ingredients/impasto/picture_burnt_1.png",11]
-    ]
-    return ingredients;
+//Ported
+    return [
+        {
+            disabling_time: 1500,
+            display_time: 700,
+            hits_required: 3,
+            id: 1,
+            name: "Impasto",
+            picture_raw: "assets/images/databaseBackup/ingredients/impasto/picture_raw_1.png",
+            picture_raw_distraction: "assets/images/databaseBackup/ingredients/impasto/picture_raw_distraction_1.png",
+            picture_processed: "assets/images/databaseBackup/ingredients/impasto/picture_processed_1.png",
+            picture_baked: "assets/images/databaseBackup/ingredients/impasto/picture_baked_1.png",
+            picture_burnt: "assets/images/databaseBackup/ingredients/impasto/picture_burnt_1.png",
+            tier: 1,
+            zIndex: 11
+        },
+        {
+            disabling_time: 1500,
+            display_time: 700,
+            hits_required: 3,
+            id: 2,
+            name: "Pomodoro",
+            picture_raw: "assets/images/databaseBackup/ingredients/pomodoro/picture_raw_2.png",
+            picture_raw_distraction: "assets/images/databaseBackup/ingredients/pomodoro/picture_raw_distraction_2.png",
+            picture_processed: "assets/images/databaseBackup/ingredients/pomodoro/picture_processed_2.png",
+            picture_baked: "assets/images/databaseBackup/ingredients/pomodoro/picture_baked_2.png",
+            picture_burnt: "assets/images/databaseBackup/ingredients/pomodoro/picture_burnt_2.png",
+            tier: 1,
+            zIndex: 12
+        },
+        {
+            hits_required: 3,
+            id: 3,
+            name: "Formaggio",
+            picture_raw: "assets/images/databaseBackup/ingredients/formaggio/picture_raw_3.png",
+            picture_raw_distraction: "assets/images/databaseBackup/ingredients/formaggio/picture_raw_distraction_3.png",
+            picture_processed: "assets/images/databaseBackup/ingredients/formaggio/picture_processed_3.png",
+            picture_baked: "assets/images/databaseBackup/ingredients/formaggio/picture_baked_3.png",
+            picture_burnt: "assets/images/databaseBackup/ingredients/formaggio/picture_burnt_3.png",
+            rotation: 6,
+            speed: 4,
+            tier: 1,
+            vertex_x_inPercent: 30,
+            vertex_y_inPercent: 90,
+            zIndex: 13
+        },
+        {
+            hits_required: 3,
+            id: 4,
+            name: "Salame",
+            picture_baked: "assets/images/databaseBackup/ingredients/salame/picture_baked_4.png",
+            picture_burnt: "assets/images/databaseBackup/ingredients/salame/picture_burnt_4.png",
+            picture_processed: "assets/images/databaseBackup/ingredients/salame/picture_processed_4.png",
+            picture_raw: "assets/images/databaseBackup/ingredients/salame/picture_raw_4.png",
+            picture_raw_distraction: "assets/images/databaseBackup/ingredients/salame/picture_raw_distraction_4.png",
+            rotation: 5,
+            speed: 3.4,
+            tier: 1,
+            vertex_x_inPercent: 20,
+            vertex_y_inPercent: 60,
+            zIndex: 16
+        },
+        {
+            hits_required: 3,
+            id: 5,
+            name: "Funghi",
+            picture_baked: "assets/images/databaseBackup/ingredients/funghi/picture_baked_5.png",
+            picture_burnt: "assets/images/databaseBackup/ingredients/funghi/picture_burnt_5.png",
+            picture_processed: "assets/images/databaseBackup/ingredients/funghi/picture_processed_5.png",
+            picture_raw: "assets/images/databaseBackup/ingredients/funghi/picture_raw_5.png",
+            picture_raw_distraction: "assets/images/databaseBackup/ingredients/funghi/picture_raw_distraction_5.png",
+            rotation: 6,
+            speed: 3.5,
+            tier: 2,
+            vertex_x_inPercent: 43,
+            vertex_y_inPercent: 56,
+            zIndex: 15
+        },
+        {
+            hits_required: 3,
+            id: 6,
+            name: "Prosciutto",
+            picture_baked: "assets/images/databaseBackup/ingredients/prosciutto/picture_baked_6.png",
+            picture_burnt: "assets/images/databaseBackup/ingredients/prosciutto/picture_burnt_6.png",
+            picture_processed: "assets/images/databaseBackup/ingredients/prosciutto/picture_processed_6.png",
+            picture_raw: "assets/images/databaseBackup/ingredients/prosciutto/picture_raw_6.png",
+            picture_raw_distraction: "assets/images/databaseBackup/ingredients/prosciutto/picture_raw_distraction_6.png",
+            rotation: 5,
+            speed: 5.3,
+            tier: 2,
+            vertex_x_inPercent: 20,
+            vertex_y_inPercent: 75,
+            zIndex: 14
+        }
+    ];
     /*
     let response = await fetch("pizza_rush/getAvailableIngredients");
     return response.json();
@@ -86,11 +177,265 @@ async function getAvailableIngredients() {
 }
 
 async function getAvailablePizzas() {
-    const pizzas = [
-        ["Margherita", 100, 80, "temp"], //TODO fix
-        ["Salame", 150, 90, "whatever"]
-    ]
-    return pizzas;
+    //Ported
+    return [
+        {
+            id: 1,
+            name: "Margherita",
+            points: 100,
+            order_time: 80,
+            ingredients: [
+                {
+                    disabling_time: 1500,
+                    display_time: 700,
+                    hits_required: 3,
+                    id: 1,
+                    name: "Impasto",
+                    picture_raw: "assets/images/databaseBackup/ingredients/impasto/picture_raw_1.png",
+                    picture_raw_distraction: "assets/images/databaseBackup/ingredients/impasto/picture_raw_distraction_1.png",
+                    picture_processed: "assets/images/databaseBackup/ingredients/impasto/picture_processed_1.png",
+                    picture_baked: "assets/images/databaseBackup/ingredients/impasto/picture_baked_1.png",
+                    picture_burnt: "assets/images/databaseBackup/ingredients/impasto/picture_burnt_1.png",
+                    tier: 1,
+                    zIndex: 11
+                },
+                {
+                    disabling_time: 1500,
+                    display_time: 700,
+                    hits_required: 3,
+                    id: 2,
+                    name: "Pomodoro",
+                    picture_raw: "assets/images/databaseBackup/ingredients/pomodoro/picture_raw_2.png",
+                    picture_raw_distraction: "assets/images/databaseBackup/ingredients/pomodoro/picture_raw_distraction_2.png",
+                    picture_processed: "assets/images/databaseBackup/ingredients/pomodoro/picture_processed_2.png",
+                    picture_baked: "assets/images/databaseBackup/ingredients/pomodoro/picture_baked_2.png",
+                    picture_burnt: "assets/images/databaseBackup/ingredients/pomodoro/picture_burnt_2.png",
+                    tier: 1,
+                    zIndex: 12
+                },
+                {
+                    hits_required: 3,
+                    id: 3,
+                    name: "Formaggio",
+                    picture_raw: "assets/images/databaseBackup/ingredients/formaggio/picture_raw_3.png",
+                    picture_raw_distraction: "assets/images/databaseBackup/ingredients/formaggio/picture_raw_distraction_3.png",
+                    picture_processed: "assets/images/databaseBackup/ingredients/formaggio/picture_processed_3.png",
+                    picture_baked: "assets/images/databaseBackup/ingredients/formaggio/picture_baked_3.png",
+                    picture_burnt: "assets/images/databaseBackup/ingredients/formaggio/picture_burnt_3.png",
+                    rotation: 6,
+                    speed: 4,
+                    tier: 1,
+                    vertex_x_inPercent: 30,
+                    vertex_y_inPercent: 90,
+                    zIndex: 13
+                }
+            ]
+        },
+        {
+            id: 2,
+            ingredients: [
+                {
+                    disabling_time: 1500,
+                    display_time: 700,
+                    hits_required: 3,
+                    id: 1,
+                    name: "Impasto",
+                    picture_raw: "assets/images/databaseBackup/ingredients/impasto/picture_raw_1.png",
+                    picture_raw_distraction: "assets/images/databaseBackup/ingredients/impasto/picture_raw_distraction_1.png",
+                    picture_processed: "assets/images/databaseBackup/ingredients/impasto/picture_processed_1.png",
+                    picture_baked: "assets/images/databaseBackup/ingredients/impasto/picture_baked_1.png",
+                    picture_burnt: "assets/images/databaseBackup/ingredients/impasto/picture_burnt_1.png",
+                    tier: 1,
+                    zIndex: 11
+                },
+                {
+                    disabling_time: 1500,
+                    display_time: 700,
+                    hits_required: 3,
+                    id: 2,
+                    name: "Pomodoro",
+                    picture_raw: "assets/images/databaseBackup/ingredients/pomodoro/picture_raw_2.png",
+                    picture_raw_distraction: "assets/images/databaseBackup/ingredients/pomodoro/picture_raw_distraction_2.png",
+                    picture_processed: "assets/images/databaseBackup/ingredients/pomodoro/picture_processed_2.png",
+                    picture_baked: "assets/images/databaseBackup/ingredients/pomodoro/picture_baked_2.png",
+                    picture_burnt: "assets/images/databaseBackup/ingredients/pomodoro/picture_burnt_2.png",
+                    tier: 1,
+                    zIndex: 12
+                },
+                {
+                    hits_required: 3,
+                    id: 3,
+                    name: "Formaggio",
+                    picture_raw: "assets/images/databaseBackup/ingredients/formaggio/picture_raw_3.png",
+                    picture_raw_distraction: "assets/images/databaseBackup/ingredients/formaggio/picture_raw_distraction_3.png",
+                    picture_processed: "assets/images/databaseBackup/ingredients/formaggio/picture_processed_3.png",
+                    picture_baked: "assets/images/databaseBackup/ingredients/formaggio/picture_baked_3.png",
+                    picture_burnt: "assets/images/databaseBackup/ingredients/formaggio/picture_burnt_3.png",
+                    rotation: 6,
+                    speed: 4,
+                    tier: 1,
+                    vertex_x_inPercent: 30,
+                    vertex_y_inPercent: 90,
+                    zIndex: 13
+                },
+                {
+                    hits_required: 3,
+                    id: 4,
+                    name: "Salame",
+                    picture_baked: "assets/images/databaseBackup/ingredients/salame/picture_baked_4.png",
+                    picture_burnt: "assets/images/databaseBackup/ingredients/salame/picture_burnt_4.png",
+                    picture_processed: "assets/images/databaseBackup/ingredients/salame/picture_processed_4.png",
+                    picture_raw: "assets/images/databaseBackup/ingredients/salame/picture_raw_4.png",
+                    picture_raw_distraction: "assets/images/databaseBackup/ingredients/salame/picture_raw_distraction_4.png",
+                    rotation: 5,
+                    speed: 3.4,
+                    tier: 1,
+                    vertex_x_inPercent: 20,
+                    vertex_y_inPercent: 60,
+                    zIndex: 16
+                }
+            ],
+            name: "Salame",
+            order_time: 90,
+            points: 150
+        },
+        {
+            id: 3,
+            ingredients: [
+                {
+                    disabling_time: 1500,
+                    display_time: 700,
+                    hits_required: 3,
+                    id: 1,
+                    name: "Impasto",
+                    picture_raw: "assets/images/databaseBackup/ingredients/impasto/picture_raw_1.png",
+                    picture_raw_distraction: "assets/images/databaseBackup/ingredients/impasto/picture_raw_distraction_1.png",
+                    picture_processed: "assets/images/databaseBackup/ingredients/impasto/picture_processed_1.png",
+                    picture_baked: "assets/images/databaseBackup/ingredients/impasto/picture_baked_1.png",
+                    picture_burnt: "assets/images/databaseBackup/ingredients/impasto/picture_burnt_1.png",
+                    tier: 1,
+                    zIndex: 11
+                },
+                {
+                    disabling_time: 1500,
+                    display_time: 700,
+                    hits_required: 3,
+                    id: 2,
+                    name: "Pomodoro",
+                    picture_raw: "assets/images/databaseBackup/ingredients/pomodoro/picture_raw_2.png",
+                    picture_raw_distraction: "assets/images/databaseBackup/ingredients/pomodoro/picture_raw_distraction_2.png",
+                    picture_processed: "assets/images/databaseBackup/ingredients/pomodoro/picture_processed_2.png",
+                    picture_baked: "assets/images/databaseBackup/ingredients/pomodoro/picture_baked_2.png",
+                    picture_burnt: "assets/images/databaseBackup/ingredients/pomodoro/picture_burnt_2.png",
+                    tier: 1,
+                    zIndex: 12
+                },
+                {
+                    hits_required: 3,
+                    id: 3,
+                    name: "Formaggio",
+                    picture_raw: "assets/images/databaseBackup/ingredients/formaggio/picture_raw_3.png",
+                    picture_raw_distraction: "assets/images/databaseBackup/ingredients/formaggio/picture_raw_distraction_3.png",
+                    picture_processed: "assets/images/databaseBackup/ingredients/formaggio/picture_processed_3.png",
+                    picture_baked: "assets/images/databaseBackup/ingredients/formaggio/picture_baked_3.png",
+                    picture_burnt: "assets/images/databaseBackup/ingredients/formaggio/picture_burnt_3.png",
+                    rotation: 6,
+                    speed: 4,
+                    tier: 1,
+                    vertex_x_inPercent: 30,
+                    vertex_y_inPercent: 90,
+                    zIndex: 13
+                },
+                {
+                    hits_required: 3,
+                    id: 5,
+                    name: "Funghi",
+                    picture_baked: "assets/images/databaseBackup/ingredients/funghi/picture_baked_5.png",
+                    picture_burnt: "assets/images/databaseBackup/ingredients/funghi/picture_burnt_5.png",
+                    picture_processed: "assets/images/databaseBackup/ingredients/funghi/picture_processed_5.png",
+                    picture_raw: "assets/images/databaseBackup/ingredients/funghi/picture_raw_5.png",
+                    picture_raw_distraction: "assets/images/databaseBackup/ingredients/funghi/picture_raw_distraction_5.png",
+                    rotation: 6,
+                    speed: 3.5,
+                    tier: 2,
+                    vertex_x_inPercent: 43,
+                    vertex_y_inPercent: 56,
+                    zIndex: 15
+                }
+            ],
+            name: "Funghi",
+            order_time: 90,
+            points: 250
+        },
+        {
+            id: 4,
+            ingredients: [
+                {
+                    disabling_time: 1500,
+                    display_time: 700,
+                    hits_required: 3,
+                    id: 1,
+                    name: "Impasto",
+                    picture_raw: "assets/images/databaseBackup/ingredients/impasto/picture_raw_1.png",
+                    picture_raw_distraction: "assets/images/databaseBackup/ingredients/impasto/picture_raw_distraction_1.png",
+                    picture_processed: "assets/images/databaseBackup/ingredients/impasto/picture_processed_1.png",
+                    picture_baked: "assets/images/databaseBackup/ingredients/impasto/picture_baked_1.png",
+                    picture_burnt: "assets/images/databaseBackup/ingredients/impasto/picture_burnt_1.png",
+                    tier: 1,
+                    zIndex: 11
+                },
+                {
+                    disabling_time: 1500,
+                    display_time: 700,
+                    hits_required: 3,
+                    id: 2,
+                    name: "Pomodoro",
+                    picture_raw: "assets/images/databaseBackup/ingredients/pomodoro/picture_raw_2.png",
+                    picture_raw_distraction: "assets/images/databaseBackup/ingredients/pomodoro/picture_raw_distraction_2.png",
+                    picture_processed: "assets/images/databaseBackup/ingredients/pomodoro/picture_processed_2.png",
+                    picture_baked: "assets/images/databaseBackup/ingredients/pomodoro/picture_baked_2.png",
+                    picture_burnt: "assets/images/databaseBackup/ingredients/pomodoro/picture_burnt_2.png",
+                    tier: 1,
+                    zIndex: 12
+                },
+                {
+                    hits_required: 3,
+                    id: 3,
+                    name: "Formaggio",
+                    picture_raw: "assets/images/databaseBackup/ingredients/formaggio/picture_raw_3.png",
+                    picture_raw_distraction: "assets/images/databaseBackup/ingredients/formaggio/picture_raw_distraction_3.png",
+                    picture_processed: "assets/images/databaseBackup/ingredients/formaggio/picture_processed_3.png",
+                    picture_baked: "assets/images/databaseBackup/ingredients/formaggio/picture_baked_3.png",
+                    picture_burnt: "assets/images/databaseBackup/ingredients/formaggio/picture_burnt_3.png",
+                    rotation: 6,
+                    speed: 4,
+                    tier: 1,
+                    vertex_x_inPercent: 30,
+                    vertex_y_inPercent: 90,
+                    zIndex: 13
+                },
+                {
+                    hits_required: 3,
+                    id: 6,
+                    name: "Prosciutto",
+                    picture_baked: "assets/images/databaseBackup/ingredients/prosciutto/picture_baked_6.png",
+                    picture_burnt: "assets/images/databaseBackup/ingredients/prosciutto/picture_burnt_6.png",
+                    picture_processed: "assets/images/databaseBackup/ingredients/prosciutto/picture_processed_6.png",
+                    picture_raw: "assets/images/databaseBackup/ingredients/prosciutto/picture_raw_6.png",
+                    picture_raw_distraction: "assets/images/databaseBackup/ingredients/prosciutto/picture_raw_distraction_6.png",
+                    rotation: 5,
+                    speed: 5.3,
+                    tier: 2,
+                    vertex_x_inPercent: 20,
+                    vertex_y_inPercent: 75,
+                    zIndex: 14
+                }
+            ],
+            name: "Prosciutto",
+            order_time: 90,
+            points: 300
+        }
+    ];
     /*
     let response = await fetch("pizza_rush/getAvailablePizzas");
     return response.json();
@@ -219,6 +564,8 @@ async function updateCurrentPoints() {
 }
 
 async function getCurrentPoints() {
+    return parseInt(gameProperties.pointCounter);
+    /*
     let returnedPoints = -1;
     return await fetch("/pizza_rush/get_current_points")
         .then(
@@ -231,6 +578,8 @@ async function getCurrentPoints() {
         ).catch((error) => {
             console.error('Error:', error);
         });
+
+     */
 }
 
 async function getCurrentPlayerHighscore() {
@@ -283,6 +632,8 @@ async function setCurrentPlayerPoints(newTotalPoints, newHighscore) {
 }
 
 function resetPoints() {
+    gameProperties.pointCounter = 0;
+    /*Original
     fetch("/pizza_rush/reset_points", {
         method: 'POST',
         credentials: "include"
@@ -290,6 +641,7 @@ function resetPoints() {
         .catch((error) => {
             console.log('Error', error)
         })
+     */
 }
 
 

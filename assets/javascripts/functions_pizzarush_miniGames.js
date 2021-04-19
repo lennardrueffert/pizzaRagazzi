@@ -331,11 +331,11 @@ function startMiniGame(ingredientList) {
                 this.wasHitInThisThrow = true;
                 this.hits_left -= 1;
 
-                document.body.style.cursor = `url("/assets/images/cursors/hitmarker.cur"),auto`
+                document.body.style.cursor = `url("assets/images/cursors/hitmarker.cur"),auto`
                 setTimeout(resetCursor, gameProperties.fruitNinja_hitmarkerShowingTime * 1000)
 
                 function resetCursor() {
-                    document.body.style.cursor = `url("/assets/images/cursors/knife.cur"),auto`
+                    document.body.style.cursor = `url("assets/images/cursors/knife.cur"),auto`
                 }
 
                 /*
@@ -496,7 +496,7 @@ function startMiniGame(ingredientList) {
                 event = event || window.event;
                 event.preventDefault();
 
-                document.body.style.cursor = `url("/assets/images/cursors/knife.cur"),auto`;
+                document.body.style.cursor = `url("assets/images/cursors/knife.cur"),auto`;
 
                 document.onmouseup = stopListening;
                 document.onmousemove = checkForHit;
@@ -687,7 +687,7 @@ function startMiniGame(ingredientList) {
             onHit() {
                 this.endShow();
 
-                document.body.style.cursor = `url("/assets/images/cursors/hitmarker.cur"),auto`
+                document.body.style.cursor = `url("assets/images/cursors/hitmarker.cur"),auto`
                 this.hits_left -= 1;
 
                 if (this.hits_left <= 0) {
@@ -945,7 +945,7 @@ function startMiniGame(ingredientList) {
             }
 
             function checkForHit(event) {
-                document.body.style.cursor = `url("/assets/images/cursors/rollingPin.cur"),auto`;
+                document.body.style.cursor = `url("assets/images/cursors/rollingPin.cur"),auto`;
                 if (moleHandler.isDisabled())
                     return;
 
