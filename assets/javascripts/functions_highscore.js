@@ -53,8 +53,19 @@ function createHighscoreTable(tableData) {
 }
 
 function getTableData() {
+    //Ported----------
+    const highscoretable = [
+        ["Lenni", 1600],
+        ["Andi", 1900],
+        ["Jacob", 1450],
+        ["Daniel", 1000],
+        ["Julian", 1550]
+    ];
+    createHighscoreTable(highscoretable);
+    /*Original-------
     fetch("/highscore/getTableData")
         .then(result => result.json())
         .then(result => createHighscoreTable(result));
+     */
 }
 
