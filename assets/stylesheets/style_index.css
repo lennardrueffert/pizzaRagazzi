@@ -1,3 +1,7 @@
+body {
+    background: #0c0c0c ;
+}
+
 #container_disclaimer{
     display: flex;
     flex-direction: column;
@@ -26,12 +30,8 @@
     display: inline-flex;
 }
 
-#heading{
-
-}
-
-#text{
-
+#heading,#text{
+    color: #eaeaea;
 }
 
 .button{
@@ -39,9 +39,9 @@
     text-transform: uppercase;
     cursor: pointer;
     font-size: 23px;
-    background-color: white;
-    border: 4px black solid;
-    color: black;
+    background-color: #0c0c0c;
+    border: 4px white solid;
+    color: white;
     padding: 20px;
     width: auto;
     overflow: hidden;
@@ -49,6 +49,6 @@
 }
 
 .button:hover {
-    background: black;
-    color: white;
+    background: white;
+    color: black;
 }
